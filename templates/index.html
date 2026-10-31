@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>SMS Spam Detection</title>
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    </head>
+    <body>
+        <div class="container">
+            <div class="icon">🛡️</div>
+            <h1>SMS Spam Detector</h1>
+            <p class="subtitle">
+                Check whether your text message is genuine or spam
+            </p>
+            <!-- SMS input form-->
+            <form method='POST' action="/">
+                <label for="message">Enter your SMS message:</label>
+
+                <textarea 
+                id="message"
+                name="message"
+                placeholder="Type or paste your SMS here..."
+                required
+                >{{message}}</textarea>
+
+                <button type="submit">Analyze Message</button>
+
+                <button type="button" class="reset-btn" onclick="resetForm()">
+                    Reset
+                </button>
+            </form>
+
+            <!-----Display the Prediction----->
+            {% if prediction %}
+                <div class="result {{ prediction.lower() }} ">
+                    {% if prediction == 'Spam' %}
+                         <h2>⚠️ Spam Message Detected</h2>
+                         <p>This message may be unwanted or fraudulent.</p>
+                    {% else %}
+                        <h2>✅ This Message Looks Safe</h2>  
+                        <p>The model classified this message as legitimate (Ham).</p>
+                    {% endif %}
+                    
+                    <p class="note">
+                        Prediction is based on the trained machine learning model.
+                    </p>
+                </div>
+            
+            {% endif %}
+            <p class="footer">
+                Powered by Machine Learning - SMS Detection System
+            </p>  
+
+        </div>
+       <!--- Reset Button Java Script-------->
+        <script>
+            function resetForm(){
+                document.getElementById('message').value = '';
+
+                // Removing previous prediction
+                const result = document.querySelector('.result');
+
+                if(result){
+                    result.remove();
+                }
+            }
+        </script>
+    </body>
+</html>
