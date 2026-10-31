@@ -1,7 +1,7 @@
 ## How to Run the Project
 
 1. Clone or download this repository.
-2. Open the project folder in VS Code.
+2. Open the project folder in VS Code. *(Alternatively, open the project folder in File Explorer, type `cmd` in the address bar, and press Enter to open Command Prompt directly in that folder.)*
 3. Create and activate a virtual environment:
 
    ```bash
@@ -23,6 +23,8 @@
 
 6. Open your browser and visit:
 
-   `http://127.0.0.1:5000`
+   ```text
+   http://127.0.0.1:5000
+   ```
 
 **Note:** Make sure `sms_spam_model.pkl` is present in the project root directory before running the application.
