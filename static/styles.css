@@ -1,0 +1,162 @@
+/* General Page Styling*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #e8efff, #f7f8fc);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    color: #202944;
+}
+
+/* Main application card */
+.container{
+    background: white;
+    width: 100%;
+    max-width: 600px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 12px 40px rgba(35, 50, 90, 0.12);
+}
+
+/* Shield icon */
+.icon{
+    font-size: 45px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+/* Heading */
+h1{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 12px;
+    color: #25345c;
+}
+.subtitle {
+    text-align: center;
+    color: #707990;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Form labels */
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10;
+    margin-left: 3px;
+}
+
+/* SMS text area */
+textarea {
+    width: 100%;
+    height: 160px;
+    padding: 15px;
+    border: 1px solid #d5dbea;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 15px;
+    resize: vertical;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+textarea:focus {
+    border-color: #526de5;
+}
+
+/* Analyze button */
+button{
+   width: 100%;
+   padding: 15px;
+   margin-top: 18px;
+   border: none;
+   border-radius: 10px;
+   background: #4c63d9;
+   color: white;
+   font-size: 16px;
+   font-weight: bold;
+   cursor: pointer;
+   transition: background 0.2s, transform 0.2s;
+}
+
+button:hover{
+    background: #354bc0;
+    transform: translateY(-1px);
+}
+
+/* Prediction result */
+.result{
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.result h2{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.result p{
+    line-height: 1.6;
+}
+
+/* Ham result */
+.result.ham{
+    background: #e8efff;
+    border: 1px solid #b7e8c9;
+    color: #176b3a;
+}
+
+/* Spam result */
+.result .spam{
+    background: #fff0f0;
+    border: 1px solid #f3c2c2;
+    color: #b42323;
+}
+
+/* Small note inside the result */
+.result .note{
+    margin-top: 12px;
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+/* Reset button */
+.reset-btn{
+    background: rgb(183, 199, 204);
+    color: rgb(67, 63, 63);
+    margin-top: 10px;
+}
+
+.reset-btn:hover{
+    background: rgb(211, 210, 210);
+}
+
+/* Footer */
+.footer{
+    text-align: center;
+    font-size: 12px;
+    color: #8a91a5;
+    margin-top: 28px;
+}
+
+/* Mobile-friendly layout */
+@media (max-width: 500px){
+    .container{
+        padding: 25px 20px;
+    }
+
+    h1{
+        font-size: 25px;
+    }
+}
